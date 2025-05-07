@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - TaskWise</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-tasks"></i> TaskWise</h1>
+            </div>
+            <div class="user-menu">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search tasks...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="notifications">
+                    <button class="icon-button"><i class="fas fa-bell"></i></button>
+                </div>
+                <div class="profile-dropdown">
+                    <button class="profile-toggle">
+                        <div class="profile-initial" id="profile-initial"></div>
+                        <span id="username">Nahi</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="dropdown">
+                        <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                    </li>
+                    
+                    <li>
+                        <a href="index.html"><i class="fas fa-home"></i>Home</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="dashboard-content">
+            <div class="page-header">
+                <h2>My Profile</h2>
+            </div>
+
+            <div class="profile-container">
+                <div class="profile-header animate-card">
+                    <div class="profile-avatar">
+                        <img src="photo_nahish.jpg" alt="User Profile" id="profile-picture">
+                        <button class="change-avatar-btn"><i class="fas fa-camera"></i></button>
+                    </div>
+                    <div class="profile-info">
+                        <h3 id="profile-fullname">Nahi</h3>
+                        <p id="profile-email">abumaru@gmail.com</p>
+                        <p id="profile-joined">Member since April 2025</p>
+                    </div>
+                </div>
+
+                <div class="profile-tabs animate-card delay-1">
+                    <button class="tab-button active" data-tab="account-info">Account Info</button>
+                    
+                </div>
+
+                <div class="tab-content animate-card delay-2">
+                    <div class="tab-pane active" id="account-info">
+                        <form id="account-info-form" action="update_profile.php" method="POST">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fullname">Full Name</label>
+                                    <input type="text" id="fullname" name="fullname">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="bio">Bio</label>
+                                    <textarea id="bio" name="bio" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+
+                               
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,9 +5,28 @@
     <title>Dashboard - TaskWise</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .shake {
+            animation: shake 0.2s; /* Reduced duration */
+        }
+
+        @keyframes shake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-5px);
+            }
+            50% {
+                transform: translateX(5px);
+            }
+            75% {
+                transform: translateX(-5px);
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
     <header class="dashboard-header">
         <div class="container">
             <div class="logo">
@@ -24,13 +42,12 @@
                 </div>
                 <div class="profile-dropdown">
                     <button class="profile-toggle">
-                        <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100" alt="User Profile">
-                        <span id="username">John Doe</span>
+                        <img src="       " alt="User Profile">
+                        <span id="username">Abebe</span>
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="dropdown-menu">
-                        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
-                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>                       
                         <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
                     </div>
                 </div>
@@ -38,7 +55,6 @@
         </div>
     </header>
 
-    <!-- Sidebar -->
     <div class="dashboard-container">
         <aside class="sidebar">
             <nav class="sidebar-nav">
@@ -46,32 +62,49 @@
                     <li class="active">
                         <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
                     </li>
-                    <li>
-                        <a href="#"><i class="fas fa-tasks"></i> My Tasks</a>
+                    <li class="has-submenu">
+                        <a href="#"><i class="fas fa-tasks"></i> My Tasks <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="#" class="view-tasks"><i class="fas fa-list"></i> View All Tasks</a>
+                            </li>
+                            <li>
+                                <a href="create_task.html" class="add-task"><i class="fas fa-plus"></i> Add New Task</a>
+                            </li>
+                            <li>
+                                <a href="#" class="completed-ttasks"><i class="fas fa-check-double"></i> Completed Tasks</a>
+                            </li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="#"><i class="fas fa-calendar"></i> Calendar</a>
+                    
+                    <li class="has-submenu">
+                        <a href="#"><i class="fas fa-chart-bar"></i> Reports <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="#" class="monthly-report"><i class="fas fa-file-alt"></i> Monthly Report</a>
+                            </li>
+                            <li>
+                                <a href="#" class="yearly-report"><i class="fas fa-file-invoice"></i> Yearly Report</a>
+                            </li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="#"><i class="fas fa-chart-pie"></i> Reports</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fas fa-users"></i> Teams</a>
-                    </li>
-                    <li class="divider"></li>
+                    
+                    
                     <li>
                         <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="index.html"><i class="fas fa-home"></i> Home</a>
                     </li>
+                    <li>
+                        <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </li>
+                    
                 </ul>
             </nav>
         </aside>
 
-        <!-- Main Content -->
         <main class="dashboard-content">
-            <!-- Page Header -->
             <div class="page-header">
                 <h2>Dashboard</h2>
                 <div class="actions">
@@ -79,47 +112,45 @@
                 </div>
             </div>
 
-            <!-- Stats Cards -->
             <div class="stats-cards">
-                <div class="stat-card animate-card">
+                <div class="stat-card animate-card" onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 200);">
                     <div class="stat-icon">
                         <i class="fas fa-list-check"></i>
                     </div>
                     <div class="stat-details">
-                        <h3 id="tasks-today">0</h3>
+                        <h3 id="tasks-today">15</h3>
                         <p>Tasks Today</p>
                     </div>
                 </div>
-                <div class="stat-card animate-card delay-1">
+                <div class="stat-card animate-card delay-1" onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 200);">
                     <div class="stat-icon">
                         <i class="fas fa-check-circle"></i>
                     </div>
                     <div class="stat-details">
-                        <h3 id="tasks-completed">0</h3>
+                        <h3 id="tasks-completed">10</h3>
                         <p>Completed</p>
                     </div>
                 </div>
-                <div class="stat-card animate-card delay-2">
+                <div class="stat-card animate-card delay-2" onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 200);">
                     <div class="stat-icon overdue">
                         <i class="fas fa-clock"></i>
                     </div>
                     <div class="stat-details">
-                        <h3 id="tasks-overdue">0</h3>
+                        <h3 id="tasks-overdue">2</h3>
                         <p>Overdue</p>
                     </div>
                 </div>
-                <div class="stat-card animate-card delay-3">
+                <div class="stat-card animate-card delay-3" onclick="this.classList.add('shake'); setTimeout(() => this.classList.remove('shake'), 200);">
                     <div class="stat-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <div class="stat-details">
-                        <h3 id="completion-rate">0%</h3>
+                        <h3 id="completion-rate">67%</h3>
                         <p>Completion Rate</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Task List -->
             <div class="dashboard-grid">
                 <div class="task-list-container">
                     <div class="card-header">
@@ -130,46 +161,77 @@
                         </div>
                     </div>
                     <div class="task-list" id="task-list">
-                        <!-- Example Task -->
                         <div class="task-item">
                             <div class="task-content">
-                                <h4>Finish the project report</h4>
-                                <p>Due: May 2, 2025</p>
+                                <h4>Finalize UI design for login page</h4>
+                                <p>Due: May 5, 2025</p>
                             </div>
                             <div class="task-meta">
                                 <span class="task-priority priority-high">High</span>
                             </div>
                             <div class="task-actions">
-                                <a href="#" class="btn btn-outline" data-task-id="123"><i class="fas fa-edit"></i> Edit</a>
+                                <a href="#" class="btn btn-outline" data-task-id="456"><i class="fas fa-edit"></i> Edit</a>
                             </div>
                         </div>
-                        <!-- Add more tasks dynamically -->
+                        <div class="task-item">
+                            <div class="task-content">
+                                <h4>Write user stories for module X</h4>
+                                <p>Due: May 7, 2025</p>
+                            </div>
+                            <div class="task-meta">
+                                <span class="task-priority priority-medium">Medium</span>
+                            </div>
+                            <div class="task-actions">
+                                <a href="#" class="btn btn-outline" data-task-id="457"><i class="fas fa-edit"></i> Edit</a>
+                            </div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-content">
+                                <h4>Review backend API documentation</h4>
+                                <p>Due: May 9, 2025</p>
+                            </div>
+                            <div class="task-meta">
+                                <span class="task-priority priority-low">Low</span>
+                            </div>
+                            <div class="task-actions">
+                                <a href="#" class="btn btn-outline" data-task-id="458"><i class="fas fa-edit"></i> Edit</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Upcoming Tasks -->
                 <div class="upcoming-tasks">
                     <div class="card-header">
                         <h3>Upcoming Deadlines</h3>
                     </div>
                     <div class="upcoming-list" id="upcoming-list">
-                        <!-- Example Upcoming Task -->
                         <div class="task-item">
                             <div class="task-content">
-                                <h4>Prepare presentation slides</h4>
-                                <p>Due: May 5, 2025</p>
+                                <h4>Prepare presentation slides for software tool</h4>
+                                <p>Due: May 10, 2025</p>
                             </div>
                         </div>
-                        <!-- Add more upcoming tasks dynamically -->
+                        <div class="task-item">
+                            <div class="task-content">
+                                <h4>use case diagram</h4>
+                                <p>Due: May 11, 2025</p>
+                            </div>
+                        </div>
+<div class="task-item">
+                            <div class="task-content">
+                                <h4>Submit proposal for project</h4>
+                                <p>Due: May 12, 2025</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </main>
     </div>
 
-    <!-- Edit Task Modal -->
     <div id="edit-task-modal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content animate-card">
             <span class="close-button">&times;</span>
             <h3>Edit Task</h3>
             <form id="edit-task-form">
@@ -189,16 +251,81 @@
                 <div class="form-group">
                     <label for="task-priority">Priority</label>
                     <select id="task-priority" name="priority">
-                        <option value="high">High</option>
-                        <option value="medium">Medium</option>
                         <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <div class="form-group">
+                    <label for="task-status">Status</label>
+                    <select id="task-status" name="status">
+                        <option value="to-do">To Do</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="completed">Completed</option>
+                        <option value="on-hold">On Hold</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-danger" id="delete-task-btn">Delete Task</button>
+                    <div class="right-actions">
+                        <button type="button" class="btn btn-outline" onclick="window.location.href='dashboard.html'">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const submenuLinks = document.querySelectorAll('.has-submenu > a');
+            const editModal = document.getElementById('edit-task-modal');
+            const closeButton = document.querySelector('.close-button');
+            const taskItems = document.querySelectorAll('.task-actions a');
+
+            submenuLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const submenu = this.nextElementSibling;
+                    if (submenu && submenu.classList.contains('submenu')) {
+                        submenu.classList.toggle('open');
+                        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+                        const icon = this.querySelector('.fa-chevron-down');
+                        if (icon) {
+                            icon.classList.toggle('rotate');
+                        }
+                    }
+                });
+            });
+
+            taskItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const taskId = this.getAttribute('data-task-id');
+                    // In a real application, you would fetch task details based on taskId
+                    document.getElementById('task-id').value = taskId;
+                    document.getElementById('task-title').value = "Example Task Title";
+
+
+document.getElementById('task-description').value = "Example task description goes here.";
+                    document.getElementById('due-date').value = "2025-05-15";
+                    document.getElementById('task-priority').value = "medium";
+                    document.getElementById('task-status').value = "in-progress";
+                    editModal.style.display = "block";
+                });
+            });
+
+            closeButton.addEventListener('click', function() {
+                editModal.style.display = "none";
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target == editModal) {
+                    editModal.style.display = "none";
+                }
+            });
+        });
+    </script>
     <script src="dashboard.js"></script>
 </body>
 </html>

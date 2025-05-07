@@ -1,0 +1,227 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - TaskWise</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-tasks"></i> TaskWise</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html" class="active">Sign Up</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>About TaskWise</h1>
+            <p>Learn more about our mission and the team behind TaskWise</p>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content animate-card">
+                <div class="about-image">
+                    <img src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="About TaskWise">
+                </div>
+                <div class="about-text">
+                    <h2>Our Mission</h2>
+                    <p>At TaskWise, we believe that effective task management is the foundation of productivity and success. Our mission is to provide a simple yet powerful tool that helps individuals and teams organize their work, manage their time, and achieve their goals.</p>
+                    <p>Founded in 2025, TaskWise has quickly become a trusted partner for thousands of professionals across industries. We're dedicated to continuous improvement and innovation, always striving to make task management more intuitive, efficient, and enjoyable.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h3>1000</h3>
+                            <p>Users</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>20</h3>
+                            <p>Tasks Completed</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>10</h3>
+                            <p>Teams</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-card animate-card">
+                    <div class="team-image">
+                        <img src="photo_2025-05-05_12-40-10.jpg" alt="Diyana">
+                    </div>
+                    <div class="team-info">
+                        <h3>Diyana</h3>
+                        <p class="team-title">Full-stack Developer</p>
+                        <p class="team-bio">Diyana have 3 years of experience in web development. she founded TaskWise with a vision to simplify task management for everyone.</p>
+                        <div class="team-social">
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card animate-card delay-1">
+                    <div class="team-image">
+                        <img src="photo_2025-05-05_12-23-47.jpg" alt="Sami">
+                    </div>
+                    <div class="team-info">
+                        <h3>Sami</h3>
+                        <p class="team-title">Lead Developer</p>
+                        <p class="team-bio">sami is a full-stack developer with expertise in building scalable web applications. He leads our development team and oversees all technical aspects of TaskWise.</p>
+                        <div class="team-social">
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card animate-card delay-2">
+                    <div class="team-image">
+                        <img src="photo_2025-05-05_12-35-57.jpg" alt="Nahom">
+                    </div>
+                    <div class="team-info">
+                        <h3>Nahom Maru</h3>
+                        <p class="team-title">Frontend Developer</p>
+                        <p class="team-bio">Nahom is passionate about creating intuitive and beautiful user experiences. He's responsible for the clean and user-friendly design of TaskWise.</p>
+                        <div class="team-social">
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card animate-card delay-3">
+                    <div class="team-image">
+                        <img src=" photo_sele.jpg " alt="selemon">
+                    </div>
+                    <div class="team-info">
+                        <h3>selemon</h3>
+                        <p class="team-title">Backend software developer</p>
+                        <p class="team-bio">He.....</p>
+                        <div class="team-social">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-form-container animate-card">
+                    <h2>Get In Touch</h2>
+                    <p>Have questions or feedback? We'd love to hear from you!</p>
+                    <form id="contact-form" action="php/contact.php" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <div id="contact-error" class="error-message"></div>
+                        <div id="contact-success" class="success-message"></div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info animate-card delay-1">
+                    <h2>Contact Information</h2>
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>contact@taskwise.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+251906892073</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>Ethiopia,Hossana<br>Ambicho, </p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-tasks"></i> TaskWise</h2>
+                    <p>Organize your tasks efficiently</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="signup.html">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> contact@taskwise.com</p>
+                    <p><i class="fas fa-phone"></i> +251906892073</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TaskWise. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>

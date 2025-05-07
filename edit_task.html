@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task - TaskWise</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-tasks"></i> TaskWise</h1>
+            </div>
+            <div class="user-menu">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search tasks...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="notifications">
+                    <button class="icon-button"><i class="fas fa-bell"></i></button>
+                </div>
+                <div class="profile-dropdown">
+                    <button class="profile-toggle">
+                        <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100" alt="User Profile">
+                        <span id="username">John Doe</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="dropdown">
+                        <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-tasks"></i> My Tasks</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-calendar"></i> Calendar</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-chart-pie"></i> Reports</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="setting.html"><i class="fas fa-cog"></i> Settings</a>
+                    </li>
+                    <li>
+                        <a href="index.html"><i class="fas fa-home"></i>Home</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="dashboard-content">
+            <div class="page-header">
+                <h2>Edit Task</h2>
+                <div class="actions">
+                    <a href="dashboard.html" class="btn btn-text"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+                </div>
+            </div>
+
+            <div class="create-task-container animate-card">
+                <form id="edit-task-form" action="update_task.php" method="POST">
+                    <input type="hidden" id="task-id" name="task_id">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="task-title">Task Title <span class="required">*</span></label>
+                            <input type="text" id="task-title" name="title" required>
+                            <div id="title-error" class="input-error"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="task-description">Description</label>
+                            <textarea id="task-description" name="description" rows="4"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-row double">
+                        <div class="form-group">
+                            <label for="due-date">Due Date <span class="required">*</span></label>
+                            <input type="date" id="due-date" name="due_date" required>
+                            <div id="due-date-error" class="input-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="task-priority">Priority</label>
+                            <select id="task-priority" name="priority">
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row double">
+                        <div class="form-group">
+                            <label for="task-status">Status</label>
+                            <select id="task-status" name="status">
+                                <option value="not_started">Not Started</option>
+                                <option value="in_progress">In Progress</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="task-category">Category</label>
+                            <select id="task-category" name="category">
+                                <option value="work">Work</option>
+                                <option value="personal">Personal</option>
+                                <option value="education">Education</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-danger" id="delete-task-btn">Delete Task</button>
+                        <div class="right-actions">
+                            <button type="button" class="btn btn-outline" onclick="window.location.href='dashboard.html'">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="edit_task.js"></script>
+</body>
+</html>

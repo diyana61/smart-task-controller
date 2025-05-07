@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Task - TaskWise</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-tasks"></i> TaskWise</h1>
+            </div>
+            <div class="user-menu">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search tasks...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="notifications">
+                    <button class="icon-button"><i class="fas fa-bell"></i></button>
+                </div>
+                <div class="profile-dropdown">
+                    <button class="profile-toggle">
+                        <img src="       " alt="User Profile">
+                        <span id="username">Abebe</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                        <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="activ">
+                        <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#"><i class="fas fa-tasks"></i> My Tasks <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="dashboard.html" class="view-tasks"><i class="fas fa-list"></i> View All Tasks</a>
+                            </li>
+                            <li>
+                                <a href="#" class="create_task.html"><i class="fas fa-plus"></i> Add New Task</a>
+                            </li>
+                            <li>
+                                <a href="#" class="completed-tasks"><i class="fas fa-check-double"></i> Completed Tasks</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#"><i class="fas fa-chart-bar"></i> Reports <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="#" class="monthly-report"><i class="fas fa-file-alt"></i> Monthly Report</a>
+                            </li>
+                            <li>
+                                <a href="#" class="yearly-report"><i class="fas fa-file-invoice"></i> Yearly Report</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                    </li>
+                    <li>
+                        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </aside>
+    
+        <main class="dashboard-content">
+            <div class="page-header">
+                <h2>Create New Task</h2>
+                <div class="actions">
+                    <a href="dashboard.html" class="btn btn-text"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+                </div>
+            </div>
+
+            <div class="create-task-container animate-card">
+                <form id="create-task-form" action="create_task.php" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="task-title">Task Title <span class="required">*</span></label>
+                            <input type="text" id="task-title" name="title" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="task-description">Description</label>
+                            <textarea id="task-description" name="description" rows="4"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" onclick="window.location.href='dashboard.html'">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Create Task</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script>tasks.js</script>
+    <script></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const submenuLinks = document.querySelectorAll('.has-submenu > a');
+
+            submenuLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const submenu = this.nextElementSibling;
+                    if (submenu && submenu.classList.contains('submenu')) {
+                        submenu.classList.toggle('open');
+                        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+                        const icon = this.querySelector('.fa-chevron-down');
+                        if (icon) {
+                            icon.classList.toggle('rotate');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
